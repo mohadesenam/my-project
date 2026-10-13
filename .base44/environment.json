@@ -1,0 +1,44 @@
+{
+  "previewPort": 3000,
+  "healthPath": "/",
+  "startCommand": "docker compose -f docker-compose.base44.yml up -d",
+  "secrets": [
+    {
+      "name": "ADMIN_PASSWORD",
+      "description": "Password for the admin dashboard login at /admin/login",
+      "requiredAtBoot": true,
+      "generatedForDevelopment": true
+    },
+    {
+      "name": "JWT_SECRET",
+      "description": "Secret key used to sign admin session JWTs",
+      "requiredAtBoot": true,
+      "generatedForDevelopment": true
+    },
+    {
+      "name": "ADMIN_EMAIL",
+      "description": "Email address that receives contact form and newsletter notifications",
+      "requiredAtBoot": false
+    },
+    {
+      "name": "SMTP_HOST",
+      "description": "SMTP server host for sending email notifications (optional — forms save to DB regardless)",
+      "requiredAtBoot": false
+    },
+    {
+      "name": "SMTP_PORT",
+      "description": "SMTP server port (e.g. 587)",
+      "requiredAtBoot": false
+    },
+    {
+      "name": "SMTP_USER",
+      "description": "SMTP username for email notifications (optional)",
+      "requiredAtBoot": false
+    },
+    {
+      "name": "SMTP_PASS",
+      "description": "SMTP password for email notifications (optional)",
+      "requiredAtBoot": false
+    }
+  ]
+}
