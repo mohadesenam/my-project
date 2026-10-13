@@ -63,11 +63,11 @@ const projects = [
     year: '2023',
     client: 'Meridian Holdings',
     area: '185,000 m²',
-    coverImage: 'https://images.unsplash.com/photo-1505765050516-f72dcac9c60e?w=800&q=80',
+    coverImage: 'https://images.unsplash.com/photo-1527576539890-dfa815648363?w=800&q=80',
     gallery: JSON.stringify([
-      'https://images.unsplash.com/photo-1505765050516-f72dcac9c60e?w=800&q=80',
+      'https://images.unsplash.com/photo-1527576539890-dfa815648363?w=800&q=80',
       'https://images.unsplash.com/photo-1486325212027-8081e485255e?w=800&q=80',
-      'https://images.unsplash.com/photo-1546484959-f9a381d1330d?w=800&q=80',
+      'https://images.unsplash.com/photo-1493397212122-2b85dda8106b?w=800&q=80',
     ]),
     featured: true,
   },
@@ -80,11 +80,11 @@ const projects = [
     year: '2022',
     client: 'NexTech Corporation',
     area: '92,000 m²',
-    coverImage: 'https://images.unsplash.com/photo-1546484959-f9a381d1330d?w=800&q=80',
+    coverImage: 'https://images.unsplash.com/photo-1493397212122-2b85dda8106b?w=800&q=80',
     gallery: JSON.stringify([
-      'https://images.unsplash.com/photo-1546484959-f9a381d1330d?w=800&q=80',
+      'https://images.unsplash.com/photo-1493397212122-2b85dda8106b?w=800&q=80',
       'https://images.unsplash.com/photo-1486325212027-8081e485255e?w=800&q=80',
-      'https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80',
+      'https://images.unsplash.com/photo-1605132789311-92530f3c1e13?w=800&q=80',
     ]),
     featured: true,
   },
@@ -97,7 +97,7 @@ const projects = [
     year: '2023',
     client: 'Crown Estates',
     area: '140,000 m²',
-    coverImage: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80',
+    coverImage: 'https://images.unsplash.com/photo-1605132789311-92530f3c1e13?w=800&q=80',
     gallery: JSON.stringify([
       'https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80',
       'https://images.unsplash.com/photo-1505765050516-f72dcac9c60e?w=800&q=80',
@@ -182,7 +182,7 @@ async function main() {
   for (const p of projects) {
     await prisma.project.upsert({
       where: { slug: p.slug },
-      update: {},
+      update: p,
       create: p,
     });
   }

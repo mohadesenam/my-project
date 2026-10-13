@@ -10,8 +10,7 @@ const navLinks = [
   { href: '/', label: 'Home' },
   { href: '/services', label: 'Services' },
   { href: '/projects', label: 'Projects' },
-  { href: '/about', label: 'About Us' },
-  { href: '/#expertise', label: 'Expertise' },
+  { href: '/about', label: 'About' },
 ];
 
 export default function Navbar() {
@@ -34,8 +33,8 @@ export default function Navbar() {
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           scrolled
-            ? 'bg-navy-deep/95 backdrop-blur-md shadow-lg py-3'
-            : 'bg-transparent py-5'
+            ? 'bg-navy-deep/95 backdrop-blur-md shadow-lg py-2.5'
+            : 'bg-transparent py-4'
         }`}
       >
         <nav className="section-padding flex items-center justify-between">
@@ -54,7 +53,7 @@ export default function Navbar() {
                 {link.label}
               </Link>
             ))}
-            <Link href="/contact" className="btn-primary !py-2.5 !px-5">
+            <Link href="/contact" className="btn-primary !py-2 !px-4 !text-xs">
               Contact
             </Link>
           </div>

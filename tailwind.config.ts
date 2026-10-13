@@ -9,8 +9,9 @@ const config: Config = {
     extend: {
       colors: {
         navy: {
-          deep: '#071B3D',
+          deep: '#071A3A',
           mid: '#0B2854',
+          panel: '#102D59',
           light: '#1769C2',
         },
         accent: {
@@ -18,11 +19,11 @@ const config: Config = {
           hover: '#3989E8',
         },
         bright: '#3989E8',
-        ghost: '#F4F7FB',
+        ghost: '#F5F6FA',
         ink: {
-          dark: '#10213B',
-          muted: '#5A6B85',
-          secondary: '#AAB9CF',
+          dark: '#111D35',
+          muted: '#6C757D',
+          secondary: '#AEBBD0',
         },
         'border-subtle': '#DCE5F0',
       },
@@ -31,12 +32,12 @@ const config: Config = {
         sans: ['var(--font-sans)', 'system-ui', 'sans-serif'],
       },
       borderRadius: {
-        card: '12px',
+        card: '8px',
       },
       boxShadow: {
-        card: '0 4px 24px rgba(7, 27, 61, 0.08)',
-        'card-hover': '0 12px 40px rgba(7, 27, 61, 0.15)',
-        glow: '0 0 30px rgba(23, 105, 194, 0.3)',
+        card: '0 2px 16px rgba(7, 26, 58, 0.06)',
+        'card-hover': '0 8px 30px rgba(7, 26, 58, 0.12)',
+        glow: '0 0 24px rgba(23, 105, 194, 0.25)',
       },
       animation: {
         'fade-up': 'fadeUp 0.6s ease-out forwards',

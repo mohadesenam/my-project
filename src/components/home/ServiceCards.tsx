@@ -8,7 +8,7 @@ const cards = [
   {
     title: 'Infrastructure Development',
     description: 'Building the foundations of modern civilization through bridges, roads, and transit systems.',
-    image: 'https://images.unsplash.com/photo-1545239351-ef35f43d514b?w=600&q=80',
+    image: 'https://images.unsplash.com/photo-1529926691761-20fb82067c71?w=600&q=80',
     icon: Construction,
     href: '/services/infrastructure-development',
   },
@@ -22,7 +22,7 @@ const cards = [
   {
     title: 'Urban Solutions',
     description: 'Smart city planning and urban development for growing metropolitan areas.',
-    image: 'https://images.unsplash.com/photo-1503602642458-232111445657?w=600&q=80',
+    image: 'https://images.unsplash.com/photo-1479839672679-a46483c0e7c8?w=600&q=80',
     icon: Building,
     href: '/services/urban-solutions',
   },
@@ -30,36 +30,37 @@ const cards = [
 
 export default function ServiceCards() {
   return (
-    <section className="relative z-20 -mt-40 pb-20">
+    <section className="relative z-20 -mt-32 pb-16">
       <div className="section-padding">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
           {cards.map((card, i) => {
             const Icon = card.icon;
             return (
               <motion.div
                 key={card.title}
-                initial={{ opacity: 0, y: 40 }}
+                initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: i * 0.15 }}
-                className="glass-card rounded-card overflow-hidden card-hover group"
+                transition={{ duration: 0.5, delay: i * 0.12 }}
+                className="rounded-card overflow-hidden card-hover group bg-navy-panel"
               >
                 {/* Image */}
-                <div className="relative h-48 img-zoom">
+                <div className="relative h-40 img-zoom">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img src={card.image} alt={card.title} className="w-full h-full object-cover" loading="lazy" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-navy-deep to-transparent" />
-                  {/* Icon in top-right corner */}
-                  <div className="absolute top-4 right-4 w-10 h-10 rounded-lg bg-white/15 backdrop-blur-sm flex items-center justify-center">
-                    <Icon size={20} className="text-white" />
-                  </div>
                 </div>
-                {/* Body */}
-                <div className="p-6">
-                  <h3 className="font-serif text-xl font-medium text-white mb-3">{card.title}</h3>
-                  <p className="text-white/60 text-sm leading-relaxed mb-5">{card.description}</p>
-                  <Link href={card.href} className="btn-pill-white">
-                    Discover More <ArrowRight size={16} />
+                {/* Body — dark navy panel */}
+                <div className="p-5">
+                  <div className="flex items-start justify-between mb-2">
+                    <h3 className="font-sans font-semibold text-white text-base">{card.title}</h3>
+                    <Icon size={18} className="text-white/50 flex-shrink-0 ml-2" />
+                  </div>
+                  <p className="text-ink-secondary text-xs leading-relaxed mb-4">{card.description}</p>
+                  <Link
+                    href={card.href}
+                    className="inline-flex items-center gap-1.5 px-4 py-2 rounded-md bg-white/10 text-white/80 text-xs font-medium hover:bg-white/20 transition-colors"
+                  >
+                    Discover More <ArrowRight size={12} />
                   </Link>
                 </div>
               </motion.div>
