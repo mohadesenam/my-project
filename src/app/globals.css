@@ -15,12 +15,12 @@
   }
   /* Focus states — 3px solid accent with 2px offset */
   *:focus-visible {
-    outline: 3px solid #1F5FD6;
+    outline: 3px solid #1769C2;
     outline-offset: 2px;
     border-radius: 2px;
   }
   ::selection {
-    background: #1F5FD6;
+    background: #1769C2;
     color: #fff;
   }
 }
@@ -47,6 +47,9 @@
   .btn-outline-dark {
     @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg border-2 border-accent text-accent font-sans font-semibold text-sm uppercase tracking-wider transition-all duration-300 hover:bg-accent hover:text-white;
   }
+  .btn-pill-white {
+    @apply inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white text-navy-deep font-sans font-semibold text-sm transition-all duration-300 hover:bg-bright hover:text-white;
+  }
   .section-padding {
     @apply px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto;
   }
@@ -66,7 +69,7 @@
     @apply scale-110;
   }
   .blueprint-line {
-    background-image: linear-gradient(to right, rgba(31, 95, 214, 0.08) 1px, transparent 1px);
+    background-image: linear-gradient(to right, rgba(23, 105, 194, 0.08) 1px, transparent 1px);
     background-size: 32px 100%;
   }
 }
@@ -84,5 +87,5 @@
 
 /* Scrollbar */
 ::-webkit-scrollbar { width: 8px; }
-::-webkit-scrollbar-track { background: #0A1F5C; }
-::-webkit-scrollbar-thumb { background: #1F5FD6; border-radius: 4px; }
+::-webkit-scrollbar-track { background: #071B3D; }
+::-webkit-scrollbar-thumb { background: #1769C2; border-radius: 4px; }

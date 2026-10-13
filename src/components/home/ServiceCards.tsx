@@ -49,21 +49,17 @@ export default function ServiceCards() {
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img src={card.image} alt={card.title} className="w-full h-full object-cover" loading="lazy" />
                   <div className="absolute inset-0 bg-gradient-to-t from-navy-deep to-transparent" />
+                  {/* Icon in top-right corner */}
+                  <div className="absolute top-4 right-4 w-10 h-10 rounded-lg bg-white/15 backdrop-blur-sm flex items-center justify-center">
+                    <Icon size={20} className="text-white" />
+                  </div>
                 </div>
                 {/* Body */}
                 <div className="p-6">
-                  <div className="flex items-start justify-between mb-3">
-                    <h3 className="font-serif text-xl font-medium text-white">{card.title}</h3>
-                    <div className="w-10 h-10 rounded-lg bg-accent/20 flex items-center justify-center flex-shrink-0">
-                      <Icon size={20} className="text-accent" />
-                    </div>
-                  </div>
+                  <h3 className="font-serif text-xl font-medium text-white mb-3">{card.title}</h3>
                   <p className="text-white/60 text-sm leading-relaxed mb-5">{card.description}</p>
-                  <Link
-                    href={card.href}
-                    className="inline-flex items-center gap-2 text-accent hover:text-accent-hover font-sans text-sm font-semibold uppercase tracking-wider transition-colors"
-                  >
-                    Discover More <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+                  <Link href={card.href} className="btn-pill-white">
+                    Discover More <ArrowRight size={16} />
                   </Link>
                 </div>
               </motion.div>

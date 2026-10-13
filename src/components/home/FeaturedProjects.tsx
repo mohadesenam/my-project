@@ -31,7 +31,7 @@ export default function FeaturedProjects({ projects }: { projects: ProjectData[]
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-12">
           <div>
             <span className="heading-eyebrow">Our Work</span>
-            <h2 className="font-serif text-3xl lg:text-5xl font-light text-white">Featured Projects</h2>
+            <h2 className="font-serif text-3xl lg:text-5xl font-medium text-white">Featured Projects</h2>
           </div>
           <p className="text-white/50 text-base max-w-md leading-relaxed">
             From soaring skyscrapers to monumental infrastructure, explore the projects that define our legacy of engineering excellence.
@@ -59,24 +59,24 @@ export default function FeaturedProjects({ projects }: { projects: ProjectData[]
                     loading="lazy"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-navy-deep via-navy-deep/20 to-transparent" />
-                  {/* Hover overlay */}
-                  <div className="absolute inset-0 bg-navy-deep/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                    <span className="btn-primary !bg-accent">
-                      View Project <ArrowRight size={16} />
-                    </span>
-                  </div>
                   {/* Category badge */}
                   <span className="absolute top-4 left-4 px-3 py-1 rounded-full bg-accent/90 text-white text-xs font-sans font-semibold uppercase tracking-wider">
                     {project.category}
                   </span>
                 </div>
                 {/* Body */}
-                <div className="p-6">
-                  <h3 className="font-serif text-xl font-medium text-white mb-2">{project.title}</h3>
-                  <p className="text-white/50 text-sm leading-relaxed mb-3 line-clamp-2">{project.description}</p>
-                  <div className="flex items-center gap-2 text-white/40 text-sm">
-                    <MapPin size={14} />
-                    <span>{project.location}</span>
+                <div className="p-6 flex items-start justify-between gap-4">
+                  <div className="flex-1">
+                    <h3 className="font-serif text-xl font-medium text-white mb-2">{project.title}</h3>
+                    <p className="text-white/50 text-sm leading-relaxed mb-3 line-clamp-2">{project.description}</p>
+                    <div className="flex items-center gap-2 text-white/40 text-sm">
+                      <MapPin size={14} />
+                      <span>{project.location}</span>
+                    </div>
+                  </div>
+                  {/* Circular arrow icon */}
+                  <div className="flex-shrink-0 w-11 h-11 rounded-full bg-accent flex items-center justify-center group-hover:bg-bright transition-colors duration-300">
+                    <ArrowRight size={18} className="text-white" />
                   </div>
                 </div>
               </Link>

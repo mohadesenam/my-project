@@ -9,19 +9,22 @@ const config: Config = {
     extend: {
       colors: {
         navy: {
-          deep: '#0A1F5C',
-          mid: '#0F2A7A',
-          light: '#1B3A8C',
+          deep: '#071B3D',
+          mid: '#0B2854',
+          light: '#1769C2',
         },
         accent: {
-          DEFAULT: '#1F5FD6',
-          hover: '#3B7BF0',
+          DEFAULT: '#1769C2',
+          hover: '#3989E8',
         },
-        ghost: '#F5F8FC',
+        bright: '#3989E8',
+        ghost: '#F4F7FB',
         ink: {
-          dark: '#0B1B3F',
-          muted: '#6B7A99',
+          dark: '#10213B',
+          muted: '#5A6B85',
+          secondary: '#AAB9CF',
         },
+        'border-subtle': '#DCE5F0',
       },
       fontFamily: {
         serif: ['var(--font-serif)', 'Georgia', 'serif'],
@@ -31,9 +34,9 @@ const config: Config = {
         card: '12px',
       },
       boxShadow: {
-        card: '0 4px 24px rgba(10, 31, 92, 0.08)',
-        'card-hover': '0 12px 40px rgba(10, 31, 92, 0.15)',
-        glow: '0 0 30px rgba(31, 95, 214, 0.3)',
+        card: '0 4px 24px rgba(7, 27, 61, 0.08)',
+        'card-hover': '0 12px 40px rgba(7, 27, 61, 0.15)',
+        glow: '0 0 30px rgba(23, 105, 194, 0.3)',
       },
       animation: {
         'fade-up': 'fadeUp 0.6s ease-out forwards',

@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import { ArrowRight, FileText } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
 export default function Hero() {
   return (
@@ -27,11 +27,10 @@ export default function Hero() {
           transition={{ duration: 0.8, ease: 'easeOut' }}
           className="max-w-3xl"
         >
-          <span className="heading-eyebrow text-accent">Global Engineering & Construction</span>
-          <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-light text-white leading-[1.1] mb-6">
+          <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-medium text-white leading-[1.15] mb-6">
             Advancing Innovative
             <br />
-            <span className="pl-8 sm:pl-16">Engineering &amp; Construction</span>
+            Engineering &amp; Construction
           </h1>
           <p className="text-lg sm:text-xl text-white/80 font-sans font-light max-w-xl mb-8">
             Building the future with expertise and excellence.
@@ -39,9 +38,6 @@ export default function Hero() {
           <div className="flex flex-wrap gap-4">
             <Link href="/about" className="btn-primary">
               Learn More <ArrowRight size={18} />
-            </Link>
-            <Link href="/contact" className="btn-outline">
-              <FileText size={18} /> Get a Free Quote
             </Link>
           </div>
         </motion.div>

@@ -13,7 +13,7 @@ const expertise = [
 
 export default function AboutExpertise() {
   return (
-    <section className="bg-ghost py-24">
+    <section id="expertise" className="bg-ghost py-24 scroll-mt-20">
       <div className="section-padding">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Left — About Us */}
@@ -63,8 +63,8 @@ export default function AboutExpertise() {
                     transition={{ duration: 0.5, delay: i * 0.1 }}
                     className="p-6 rounded-card bg-white shadow-card card-hover"
                   >
-                    <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center mb-4">
-                      <Icon size={24} className="text-accent" />
+                    <div className="w-12 h-12 rounded-lg bg-accent flex items-center justify-center mb-4">
+                      <Icon size={24} className="text-white" />
                     </div>
                     <h3 className="font-sans font-bold text-ink-dark text-lg mb-2">{item.title}</h3>
                     <p className="text-ink-muted text-sm leading-relaxed">{item.desc}</p>
