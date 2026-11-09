@@ -31,7 +31,8 @@ prisma/             — schema.prisma + seed.ts
 ```
 
 ## Database
-- SQLite file stored in Docker volume at `/app/data/stratech.db`
+- PostgreSQL, run as the `db` compose service (`prisma/schema.prisma` provider is `postgresql`)
+- `DATABASE_URL` comes from `.env.base44-defaults` and points at the `db` service
 - Schema is pushed via `prisma db push` on container startup
 - Seed runs on startup (idempotent — uses upsert/findFirst)
 - Entities: Project, Service, TeamMember, Testimonial, ContactMessage, NewsletterSubscriber
@@ -54,6 +55,11 @@ prisma/             — schema.prisma + seed.ts
 docker compose -f docker-compose.base44.yml up -d --build
 ```
 App serves on port 3000. Dev server with hot reload.
+
+## Gotchas
+- **Never commit `.next/` or `*.tsbuildinfo`.** A committed dev webpack cache (`.next/cache/webpack/*-development/`) restores an index that references pack files missing from the repo, so `next dev` throws `ENOENT … .pack.gz` + `unhandledRejection` on startup. Both are in `.gitignore`; if a stale `.next` reappears in a checkout, `rm -rf .next` and restart `web`.
+- `node:20-slim` ships without OpenSSL, which Prisma needs to pick its engine (`debian-openssl-3.0.x`). The compose startup command installs `openssl` before `prisma generate`; a command override that skips it fails with "could not locate the Query Engine".
+- `/admin` redirects to `/admin/login` when there is no session (expected, not a broken route).
 
 ## Key Design Decisions
 - SQLite chosen for single-container simplicity (no separate DB service needed)

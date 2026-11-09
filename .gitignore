@@ -1,0 +1,19 @@
+# dependencies
+node_modules/
+
+# next.js build output and dev cache (regenerated on startup)
+.next/
+out/
+
+# typescript incremental build info
+*.tsbuildinfo
+
+# local data
+data/
+*.db
+*.db-journal
+
+# env files (real values are delivered outside the repo)
+.env
+.env.local
+.env*.local
