@@ -27,7 +27,7 @@ export default async function ServiceDetailPage({ params }: { params: { slug: st
     take: 3,
   });
 
-  const Icon = (LucideIcons as Record<string, React.ComponentType<{ size?: number; className?: string }>>)[service.icon] || LucideIcons.Building2;
+  const Icon = (LucideIcons as unknown as Record<string, React.ComponentType<{ size?: number; className?: string }>>)[service.icon] || LucideIcons.Building2;
 
   return (
     <>
